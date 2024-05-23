@@ -1,1 +1,32 @@
+.class {
+    --font-size: 28px;
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    font-family: Golos Text,sans-serif,system-ui;
+    font-weight: 800;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 
+.btn{
+
+   display: flex;
+   margin:0 auto;
+   align-items:center;
+  border: none;
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+   background-color: black;
+   border-radius: 20%;
+   transition-duration: 0.4s;
+   color:white
+}
+.btn:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
