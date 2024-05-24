@@ -11,8 +11,8 @@ from api import get_pb,check_pbs
 import psycopg2
 
 
-connection = psycopg2.connect(database="dbname", user="username", password="pass", host="hostname", port=5432)
-cur = connection.cursor()
+#connection = psycopg2.connect(database="dbname", user="username", password="pass", host="hostname", port=5432)
+#cur = connection.cursor()
 #<form action="{{ url_for('return1') }}" method="post">
 
 
@@ -37,27 +37,31 @@ app = Flask(__name__)
 #разобраться с кнопками. разобраться как вставить параметр запроса в редирект. активировать станцию
 @app.route('/',methods=['get','post'])
 def index():
-   if request.method == "post":
+   if request.method == "POST":
+      res = request.json
+      if res["btn_type"]=='submit':
+         return {'re':url_for('giveout',id = res['pb_id'])}
+      elif res["btn_type"]=='return':
+         return {'re': url_for('return1', id=res['pb_id'])}
 
-      client_message = request.form.get('message')
-      if "submit_button" in request.form:
-         return redirect(url_for("giveout?id="+client_message))
-      if request.form['submit_button'] == 'Взять':
-         return redirect(url_for(url_for("return1?id="+client_message)))
    return render_template('index.html')
 
 
 
 @app.route('/giveout',methods=['get','post'])
-def payment():
+def giveout():
    query = request.args
    station_id=query['id']
+
    if request.method == "POST":
-      if request.form['submit_button'] == 'Взять повербанк':
+      res = request.json
+      if res["btn_type"] == 'submit':
          #заполнение формы оплаты. Сделать разветвление на если данные были привязаны или нет
          user,cred= 'test','test'
          get_pb(station_id)
-         set_time(user,cred)
+         #set_time(user,cred)
+
+         return {'status':'ok'}
    return render_template('index1.html')
 
 
