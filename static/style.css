@@ -21,7 +21,7 @@
   text-decoration: none;
   font-size: 16px;
    background-color: black;
-   border-radius: 20%;
+   border-radius:  2em;
    transition-duration: 0.4s;
    color:white
 }
@@ -30,3 +30,27 @@
   color: black;
   border: 1px solid black;
 }
+
+
+
+.footer {
+   font-family: Golos Text;
+  box-sizing: border-box;
+
+   margin: 0;
+  padding: 0;
+ overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: Black;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+
+  gap: 0.2rem;
+}
+
