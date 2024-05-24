@@ -21,18 +21,19 @@
 
 <div>
 <p>
- <input class="line" type="text" name="message">
+ <input class="line" type="text" id="pb_id_input" placeholder="Вводить сюда!">
+
 </p>
 <p>
- <input class="btn" type = "button" name="submit_button" value="Взять"><br>
-    <input class="btn" type = "button" name="return_button" value="Вернуть"><br>
-
+ <button class="btn" onclick="saveToServer('submit')" id="submit_button" >Взять</button><br>
+<button class="btn" onclick="saveToServer('return1')" id="return_button" >Вернуть</button><br>
 </p>
 
 
 </div>
-
+    <div class="footer">&copy;<span> </span><span> Route LLC</span></div>
 </body>
+<script src="{{url_for('static',filename='index.js')}}"></script>
 </html>
 
 
