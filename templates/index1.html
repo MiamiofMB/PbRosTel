@@ -1,19 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-     <link rel = "stylesheet" href="{{url_for('static',filename='style.css')}}">
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<div>
-  <h3 class="class"> <font style="color: #cc66cc">U</font>
-    .Charge
-    <div>x</div>
-    <div>Ростелеком</div>
-    </h3>
-</div>
-<div><input class = "btn" type="submit" name="submit_button" value="Взять повербанк"></div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+         <link rel = "stylesheet" href="{{url_for('static',filename='style.css')}}">
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <div>
+      <h3 class="class"> <font style="color: #cc66cc">U</font>
+        .Charge
+        <div>x</div>
+        <div>Ростелеком</div>
+        </h3>
+    </div>
+    <button class="btn" onclick="saveToServer2('submit')" id="submit_button" >Взять Повербанк</button><br>
 
-</body>
-</html>
+
+
+
+
+
+    <div class="footer">&copy;<span> </span><span> Route LLC</span></div>
+
+
+
+
+    </body>
+    <script src="{{url_for('static',filename='index.js')}}"></script>
+    </html>
